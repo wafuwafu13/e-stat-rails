@@ -17,10 +17,7 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
-
-two:
-  name: MyString
-  email: MyString
+田川:
+  name: 田川裕隆
+  email: mariobaske@i.softbank.jp
+  password_digest: <%= User.digest('password') %> 
