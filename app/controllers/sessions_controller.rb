@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email:params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
     else
+      flash.now[:danger] = 'メールアドレスとパスワードが違います'
       render 'new'
     end
   end
