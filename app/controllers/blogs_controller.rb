@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-    before_action :logged_in_user, only[:create, :destroy]
+    before_action :logged_in_user, only: [:create, :destroy]
 
     def create
         @blog = current_user.blogs.build(blog_params)
@@ -7,7 +7,8 @@ class BlogsController < ApplicationController
             flash[:success] = "ブログが作成されました！"
             redirect_to root_url
         else
-            render 'static_pages/home'
+            flash[:danger] = "hogehogehogeo"
+            redirect_to root_url
         end
     end
 
