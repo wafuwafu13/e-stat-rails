@@ -1,23 +1,7 @@
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="blog_form">
-        <%= render 'shared/blog_form' %>
-      </section>
-    </aside>
-  </div>
+  <%= render 'login_home' %>
 <% else %>
-  <div class="center jumbotron">
-  <h1>home/文系学生と学ぶ社会学</h1>
-  <h2>サイトの一覧を表示します。</h2>
-  <%= link_to "サインアップ", signup_path, class:"btn btn-lg btn-primary"%>
-  </div>
-
-  <%= link_to image_tag("e-stat.png", alt:"e-stat logo"),
-       'https://apps.apple.com/jp/app/%E6%97%A5%E6%9C%AC%E7%B5%B1%E8%A8%88-%E6%96%87%E7%B3%BB%E5%AD%A6%E7%94%9F%E3%81%A8%E5%AD%A6%E3%81%B6%E7%A4%BE%E4%BC%9A%E7%B5%B1%E8%A8%88%E5%AD%A6/id1491159876'%>
+  <%= render 'logout_home' %>
 <% end %>
   
 
