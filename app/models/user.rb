@@ -74,6 +74,10 @@ class User < ApplicationRecord
     def send_activation_email
         UserMailer.account_activation(self).deliver_now
     end
+
+    def feed
+        Blog.where("user_id=?", id)
+    end
 end
 
 
