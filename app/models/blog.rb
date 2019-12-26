@@ -25,4 +25,13 @@ class Blog < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 1000 }
+  validate :picture_size
+
+private
+  
+  def picture_size
+    if picture.size > 5.megabytes
+      errors.add(:picture, "5MB以下の画像にしてください")
+    end
+  end
 end
