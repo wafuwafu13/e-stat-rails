@@ -3,4 +3,8 @@
   <span class="content"><%= blog.content %></span>
   <span class="timestamp">
      <%= time_ago_in_words(blog.created_at) %> 
+     <% if current_user?(blog.user) %>
+       <%= link_to "削除", blog, method: :delete, data: { confirm: "本当によろしいですか？"} %>
+     <% end %>
+  </span>
 </li>
