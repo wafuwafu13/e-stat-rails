@@ -8,6 +8,7 @@ class BlogsController < ApplicationController
             flash[:success] = "ブログが作成されました！"
             redirect_to root_url
         else
+            
             @feed_items = []
             render 'static_pages/home'
         end
