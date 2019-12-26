@@ -22,8 +22,10 @@ gem 'bootstrap-will_paginate'
 # picture
 gem 'carrierwave'
 gem 'mini_magick'
+# envfile
+gem 'dotenv-rails'
 # Use postgresql as the database for Active Record
-gem 'pg', '0.20.0'
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

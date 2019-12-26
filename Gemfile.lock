@@ -77,6 +77,10 @@ GEM
     declarative-option (0.1.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     dry-inflector (0.2.0)
     erubis (2.7.0)
     excon (0.71.1)
@@ -439,13 +443,14 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.2)
+  dotenv-rails
   faker
   fog
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   mini_magick
-  pg (= 0.20.0)
+  pg (>= 0.18, < 2.0)
   pry-byebug
   puma (~> 3.0)
   rails (~> 5.0.7, >= 5.0.7.2)
