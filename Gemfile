@@ -19,6 +19,9 @@ gem 'faker'
 # pagenation
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+# picture
+gem 'carrierwave'
+gem 'mini_magick'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -66,3 +69,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # heroku error
 gem 'rails_12factor', group: :production
+
+# picture
+gem 'fog', group: :production

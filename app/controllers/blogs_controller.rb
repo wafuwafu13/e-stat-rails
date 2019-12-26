@@ -4,7 +4,6 @@ class BlogsController < ApplicationController
 
     def create
         @blog = current_user.blogs.build(blog_params)
-        binding.pry
         if @blog.save
             flash[:success] = "ブログが作成されました！"
             redirect_to root_url
