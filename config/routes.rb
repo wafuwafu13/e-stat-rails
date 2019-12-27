@@ -10,6 +10,8 @@
 #                   login GET    /login(.:format)                        sessions#new
 #                         POST   /login(.:format)                        sessions#create
 #                  logout DELETE /logout(.:format)                       sessions#destroy
+#          following_user GET    /users/:id/following(.:format)          users#following
+#          followers_user GET    /users/:id/followers(.:format)          users#followers
 #                   users GET    /users(.:format)                        users#index
 #                         POST   /users(.:format)                        users#create
 #                new_user GET    /users/new(.:format)                    users#new
@@ -18,9 +20,20 @@
 #                         PATCH  /users/:id(.:format)                    users#update
 #                         PUT    /users/:id(.:format)                    users#update
 #                         DELETE /users/:id(.:format)                    users#destroy
+#                         GET    /users(.:format)                        users#index
+#                         POST   /users(.:format)                        users#create
+#                         GET    /users/new(.:format)                    users#new
+#                         GET    /users/:id/edit(.:format)               users#edit
+#                         GET    /users/:id(.:format)                    users#show
+#                         PATCH  /users/:id(.:format)                    users#update
+#                         PUT    /users/:id(.:format)                    users#update
+#                         DELETE /users/:id(.:format)                    users#destroy
 # edit_account_activation GET    /account_activations/:id/edit(.:format) account_activations#edit
 #                   blogs POST   /blogs(.:format)                        blogs#create
 #                    blog DELETE /blogs/:id(.:format)                    blogs#destroy
+#           relationships POST   /relationships(.:format)                relationships#create
+#        new_relationship GET    /relationships/new(.:format)            relationships#new
+#            relationship DELETE /relationships/:id(.:format)            relationships#destroy
 
 Rails.application.routes.draw do
   get 'sessions/new'
@@ -40,6 +53,6 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :account_activations, only: [:edit]
-  resources :blogs, only: [:create, :destroy]
+  resources :blogs, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
 end
