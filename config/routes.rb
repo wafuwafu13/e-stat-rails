@@ -29,10 +29,15 @@
 #                         PUT    /users/:id(.:format)                    users#update
 #                         DELETE /users/:id(.:format)                    users#destroy
 # edit_account_activation GET    /account_activations/:id/edit(.:format) account_activations#edit
-#                   blogs POST   /blogs(.:format)                        blogs#create
-#                    blog DELETE /blogs/:id(.:format)                    blogs#destroy
+#                   blogs GET    /blogs(.:format)                        blogs#index
+#                         POST   /blogs(.:format)                        blogs#create
+#                new_blog GET    /blogs/new(.:format)                    blogs#new
+#               edit_blog GET    /blogs/:id/edit(.:format)               blogs#edit
+#                    blog GET    /blogs/:id(.:format)                    blogs#show
+#                         PATCH  /blogs/:id(.:format)                    blogs#update
+#                         PUT    /blogs/:id(.:format)                    blogs#update
+#                         DELETE /blogs/:id(.:format)                    blogs#destroy
 #           relationships POST   /relationships(.:format)                relationships#create
-#        new_relationship GET    /relationships/new(.:format)            relationships#new
 #            relationship DELETE /relationships/:id(.:format)            relationships#destroy
 
 Rails.application.routes.draw do
