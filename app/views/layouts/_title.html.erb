@@ -1,0 +1,5 @@
+<% if logged_in? %>
+  <title><%= full_title(yield(:title))%></title>
+<% else %>
+  <title>TH20ブログ</title>
+<% end %>
