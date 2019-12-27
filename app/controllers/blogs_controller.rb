@@ -7,10 +7,10 @@ class BlogsController < ApplicationController
     end
         
     def create
-      @blog = current_user.blogs.build(blog_params)
-      if @blog.save
+      blog = current_user.blogs.build(blog_params)
+      if blog.save
           flash[:success] = "ブログが作成されました！"
-          redirect_to root_url
+          redirect_to blog
       else
           @feed_items = []
           render 'static_pages/home'
@@ -21,6 +21,10 @@ class BlogsController < ApplicationController
       @blog.destroy
       flash[:success] = "ブログを削除しました"
       redirect_to request.referrer || root_url
+    end
+
+    def show
+      @blog = current_user.blogs.first
     end
 
     private
