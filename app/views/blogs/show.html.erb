@@ -1,4 +1,8 @@
-投稿したブログをみる画面
-<h1><%= @blog.title %></h1>
-<h1><%= @blog.content %></h1>
-<%= image_tag @blog.picture.url if @blog.picture? %>
+<div class="container">
+  <div class="jumbotron text-center">
+    <h4><%= @blog.created_at.strftime("%Y/%m/%d") %></h4>
+    <h2><b><%= @blog.title if @blog.title? %></b></h1>
+    <%= image_tag @blog.picture.url if @blog.picture? %>
+    <h4><%= @blog.content %></h4>
+  </div>
+</div>
