@@ -5,7 +5,7 @@
     <ol class="blogs">
       <%= render @blogs %>
     </ol>
-    <%= will_paginate @blogs %>
+    <%= will_paginate @blogs, :previous_label => '&lt 前のページ', :next_label => '次のページ &gt', class: "pagination justify-content-center" %>
     <% end %>
   </div>
 </div>
