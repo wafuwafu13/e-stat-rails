@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
     before_action :correct_user, only: :destroy
 
     def index
-      @blog = current_user.blogs.first
+      @blogs = current_user.blogs
     end
 
     def new
@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
       blog = current_user.blogs.build(blog_params)
       if blog.save
           flash[:success] = "ブログが作成されました！"
-          redirect_to blogs_path
+          redirect_to blog
       else
           redirect_to new_blog_path
           flash[:danger] = "タイトルまたは本文が空です。"
@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
     end
 
     def show
-      @blog = current_user.blogs.first
+      @blogs = current_user.blogs
     end
 
     private
