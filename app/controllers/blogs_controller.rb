@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
     before_action :correct_user, only: :destroy
 
     def index
-      @blogs = current_user.blogs
+      @blogs = current_user.blogs.paginate(page: params[:page], per_page: 5)
     end
 
     def new
