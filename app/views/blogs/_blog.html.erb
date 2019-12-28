@@ -1,13 +1,8 @@
-<li id="blog-<%= blog.id %>">
-  <span class="user"><%= link_to blog.user.name, blog.user %></span>
-  <span class="content">
-    <%= blog.content %>
+<div class="container">
+  <div class="jumbotron">
+    <div><%= blog.created_at %></div>
+    <h1><%= blog.title if blog.title? %></h1>
     <%= image_tag blog.picture.url if blog.picture? %>
-  </span>
-  <span class="timestamp">
-     <%= time_ago_in_words(blog.created_at) %> 
-     <% if current_user?(blog.user) %>
-       <%= link_to "削除", blog, method: :delete, data: { confirm: "本当によろしいですか？"} %>
-     <% end %>
-  </span>
-</li>
+    <h3><%= blog.content %></h3>
+  </div>
+</div>
