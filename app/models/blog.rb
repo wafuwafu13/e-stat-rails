@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  content    :text
 #  picture    :string
+#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer
@@ -24,7 +25,8 @@ class Blog < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
-  validates :content, presence: true, length: { maximum: 1000 }
+  validates :content, presence: true, length: { maximum: 3000 }
+  validates :title, presence: true, length: { maximum: 40 }
   validate :picture_size
 
 private
