@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="jumbotron text-center">
-    <h4><%= blog.created_at.strftime("%Y/%m/%d") %></h4>
-    <h2><b><%= blog.title if blog.title? %></b></h1>
+  <div class="jumbotron">
+    <h4 class="text-center"><%= blog.created_at.strftime("%Y/%m/%d") %></h4>
+    <h2 class="text-center"><b><%= blog.title if blog.title? %></b></h1>
     <%= image_tag blog.picture.url if blog.picture? %>
-    <h4><%= blog.content %></h4>
+    <h4><%= safe_join(blog.content) %></h4>
   </div>
 </div>
