@@ -16,8 +16,8 @@ class BlogsController < ApplicationController
           flash[:success] = "ブログが作成されました！"
           redirect_to blogs_path
       else
-          @feed_items = []
-          render 'static_pages/home'
+          redirect_to new_blog_path
+          flash[:danger] = "タイトルまたは本文が空です。"
       end
     end
 
