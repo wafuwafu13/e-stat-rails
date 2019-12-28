@@ -8,6 +8,8 @@
 #  activation_digest :string
 #  admin             :boolean          default(FALSE)
 #  email             :string
+#  image             :string
+#  introduction      :string
 #  name              :string
 #  password_digest   :string
 #  remember_digest   :string
