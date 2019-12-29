@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-    before_action :logged_in_user, only: [:create, :destroy]
+    before_action :logged_in_user, only: [:create, :destroy, :edit]
     before_action :correct_user, only: :destroy
 
     def index
@@ -25,6 +25,20 @@ class BlogsController < ApplicationController
       @blog.destroy
       flash[:success] = "ブログを削除しました"
       redirect_to request.referrer || root_url
+    end
+
+    def edit
+      @blog = Blog.find(params[:id])
+    end
+
+    def update
+      @blog = Blog.find(params[:id])
+      if @blog.update(blog_params)
+        flash[:success] = "ブログを編集しました"
+        redirect_to @blog
+      else
+        render 'edit'
+      end
     end
 
     def show
