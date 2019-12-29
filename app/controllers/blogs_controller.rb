@@ -39,7 +39,7 @@ class BlogsController < ApplicationController
       @blog = Blog.find(params[:id])
       if @blog.update(blog_params)
         flash[:success] = "ブログを編集しました"
-        redirect_to @blog
+        redirect_to select_blog_path(@blog)
       else
         render 'edit'
       end
