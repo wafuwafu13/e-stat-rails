@@ -29,6 +29,7 @@
 #                         PUT    /users/:id(.:format)                    users#update
 #                         DELETE /users/:id(.:format)                    users#destroy
 # edit_account_activation GET    /account_activations/:id/edit(.:format) account_activations#edit
+#        management_blogs GET    /blogs/management(.:format)             blogs#management
 #                   blogs GET    /blogs(.:format)                        blogs#index
 #                         POST   /blogs(.:format)                        blogs#create
 #                new_blog GET    /blogs/new(.:format)                    blogs#new
@@ -58,6 +59,10 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :account_activations, only: [:edit]
-  resources :blogs
+  resources :blogs do
+    collection do
+      get :management
+    end
+  end
   resources :relationships, only: [:create, :destroy]
 end
