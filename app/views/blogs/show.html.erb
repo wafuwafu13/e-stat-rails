@@ -1,3 +1,4 @@
+blogs/show
 <% @blogs.each do |blog| %>
   <div class="container">
     <div class="jumbotron text-center">
@@ -7,5 +8,6 @@
       <h4><%= blog.content %></h4>
     </div>
   </div>
+  <%= link_to "記事の管理", edit_blog_path(blog) %>
 <% end %>
   
