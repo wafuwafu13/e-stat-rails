@@ -13,6 +13,8 @@ gem 'bcrypt'
 gem 'annotate'
 #bootstrap
 gem 'bootstrap-sass', '3.4.1'
+#FontAwesome
+gem 'font-awesome-sass'
 # add fake person
 gem 'faker'
 # pagenation
