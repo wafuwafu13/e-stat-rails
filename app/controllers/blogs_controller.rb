@@ -6,6 +6,9 @@ class BlogsController < ApplicationController
       @blogs = current_user.blogs.paginate(page: params[:page], per_page: 5)
     end
 
+    def show
+    end
+
     def new
       @blog = Blog.new()
     end
