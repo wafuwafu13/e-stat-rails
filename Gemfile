@@ -15,6 +15,7 @@ gem 'annotate'
 gem 'bootstrap-sass', '3.4.1'
 #FontAwesome
 gem 'font-awesome-sass'
+gem 'font-awesome-rails'
 # add fake person
 gem 'faker'
 # pagenation
