@@ -1,10 +1,9 @@
 <div class="container">
   <div class="jumbtron text-center">
-    <h4><%= @blogs.first.created_at.strftime("%Y/%m/%d") %></h4>
-    <h2><b><%= @blogs.first.title %></b></h1>
-    <%= image_tag @blogs.first.picture.url if @blogs.first.picture? %>
-    <h4><%= @blogs.first.content %></h4>
-    <%= link_to "再編集する", edit_blog_path(@blogs.first)%>
+    <h4><%= @blog.created_at.strftime("%Y/%m/%d") %></h4>
+    <h2><b><%= @blog.title %></b></h1>
+    <%= image_tag @blog.picture.url if @blog.picture? %>
+    <h4><%= @blog.content %></h4>
+    <%= link_to "再編集する", edit_blog_path(@blog)%>
   </div>
 </div>
-  

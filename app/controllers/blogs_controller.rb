@@ -7,6 +7,7 @@ class BlogsController < ApplicationController
     end
 
     def show
+      @blog = Blog.find(params[:id])
     end
 
     def new
@@ -42,10 +43,6 @@ class BlogsController < ApplicationController
       else
         render 'edit'
       end
-    end
-
-    def show
-      @blogs = current_user.blogs
     end
 
     private
