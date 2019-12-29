@@ -4,6 +4,5 @@
     <h2><b><%= @blog.title %></b></h1>
     <%= image_tag @blog.picture.url if @blog.picture? %>
     <h4><%= @blog.content %></h4>
-    <%= link_to "再編集する", edit_blog_path(@blog)%>
   </div>
 </div>

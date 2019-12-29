@@ -15,10 +15,10 @@ class BlogsController < ApplicationController
     end
         
     def create
-      blog = current_user.blogs.build(blog_params)
-      if blog.save
+      @blog = current_user.blogs.build(blog_params)
+      if @blog.save
           flash[:success] = "ブログが作成されました！"
-          redirect_to blog
+          redirect_to select_blog_path(@blog)
       else
           redirect_to new_blog_path
           flash[:danger] = "タイトルまたは本文が空です。"
@@ -47,6 +47,10 @@ class BlogsController < ApplicationController
 
     def management
       @blogs = current_user.blogs.paginate(page: params[:page], per_page: 20)
+    end
+
+    def select
+      @blog = Blog.find(params[:id])
     end
 
     private
