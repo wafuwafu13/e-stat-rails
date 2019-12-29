@@ -6,6 +6,7 @@
         <th style="width:100px">タイトル</th>
         <th style="width:100px">本文</th>
         <th style="width:10px">編集</th>
+        <th style="width:10px">削除</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
         <td><%= link_to "#{blog.title}".truncate(20, omission: '...'), blog %></td>
         <td><%= blog.content.truncate(20, omission: '...') %></td>
         <td><%= link_to "編集", edit_blog_path(blog) %></td>
+        <td><%= link_to "削除", blog, method: :delete, data: { confirm: '本当に削除しますか?' }%></td>
       </tr>
     </tbody>
   </table>
