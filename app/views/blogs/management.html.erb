@@ -1,0 +1,23 @@
+<% @blogs.each do |blog| %>
+  <table class="table" style="table-layout:fixed;">
+    <thead>
+      <tr>
+        <th style="width:100px">日付</th>
+        <th style="width:100px">タイトル</th>
+        <th style="width:100px">本文</th>
+        <th style="width:10px">編集</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= blog.created_at.strftime("%Y/%m/%d") %></td>
+        <td><%= link_to "#{blog.title}".truncate(20, omission: '...'), blog %></td>
+        <td><%= blog.content.truncate(20, omission: '...') %></td>
+        <td><%= link_to "編集", edit_blog_path(blog) %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+
+
+<%= will_paginate @blogs, :previous_label => '&lt 前のページ', :next_label => '次のページ &gt' %>

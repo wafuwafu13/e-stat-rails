@@ -45,6 +45,10 @@ class BlogsController < ApplicationController
       end
     end
 
+    def management
+      @blogs = current_user.blogs.paginate(page: params[:page], per_page: 20)
+    end
+
     private
       
       def blog_params
