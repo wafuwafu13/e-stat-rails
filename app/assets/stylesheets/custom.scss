@@ -32,3 +32,30 @@ footer {
     }
   }
 }
+
+.btn-primary {
+  background: #333333;
+}
+
+.comments {
+  margin-bottom: 30px;
+  h4 {
+    padding-bottom: 10px;
+  }
+  h5.content {
+    padding-bottom: 20px;
+  }
+  small {
+    color: #AAAAAA;
+    float: left
+  }
+  ul {
+    float: right;
+    list-style: none;
+    border-bottom: 1px solid #DDDDDD;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
