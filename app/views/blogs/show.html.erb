@@ -1,20 +1,21 @@
 <div class="container">
-  <div class="jumbtron text-center">
-    <h4><%= @blog.created_at.strftime("%Y/%m/%d") %></h4>
-    <h2><b><%= @blog.title %></b></h1>
+  <div class="jumbotron">
+    <h4 class="text-center"><%= @blog.created_at.strftime("%Y/%m/%d") %></h4>
+    <h2 class="text-center"><b><%= @blog.title %></b></h1>
     <%= image_tag @blog.picture.url if @blog.picture? %>
     <h4><%= @blog.content %></h4>
   </div>
-  コメント
-  <% @comments.each do |comment| %>
-  <div class="jumbtron text-center">
-    <h4><%= comment.created_at.strftime("%Y/%m/%d") %></h4>
-    <h4><%= comment.name %></h4>
-    <h4><%= comment.title %></h4>
-    <h4><%= comment.mail %></h4>
-    <h4><%= comment.url %></h4>
-    <h4><%= comment.content %></h4>
-  </div>
-  <% end %>
-  <%= render 'comments/form' %>
 </div>
+<div class="comments">
+  <h4><b>コメント</b></h4>
+  <% @comments.each do |comment| %>
+    <h5><b><%= comment.title %></b></h5>
+    <h5 class="content"><%= comment.content %></h5>
+    <ul>
+      <li><small><%= comment.created_at.strftime("%Y/%m/%d") %></small></li>
+      <li><small>by<%= comment.name %></small></li>
+      <li><small><%= comment.url %></small></li>
+    </ul>
+  <% end %>
+</div>  
+<%= render 'comments/form' %>
