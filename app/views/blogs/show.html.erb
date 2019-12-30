@@ -5,5 +5,16 @@
     <%= image_tag @blog.picture.url if @blog.picture? %>
     <h4><%= @blog.content %></h4>
   </div>
+  コメント
+  <% @comments.each do |comment| %>
+  <div class="jumbtron text-center">
+    <h4><%= comment.created_at.strftime("%Y/%m/%d") %></h4>
+    <h4><%= comment.name %></h4>
+    <h4><%= comment.title %></h4>
+    <h4><%= comment.mail %></h4>
+    <h4><%= comment.url %></h4>
+    <h4><%= comment.content %></h4>
+  </div>
+  <% end %>
   <%= render 'comments/form' %>
 </div>
