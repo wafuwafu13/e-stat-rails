@@ -86,7 +86,7 @@ footer {
   }
 }
 
-.main-panel{
+.main-panel {
   color: black;
   margin: 30px;
   .menu-icon{
@@ -96,5 +96,15 @@ footer {
   h5 {
     padding-top: 10px;
     padding-left: 25px;
+  }
+}
+
+.profile {
+  padding-top: 50px;
+  position: relative;
+  .profile-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
