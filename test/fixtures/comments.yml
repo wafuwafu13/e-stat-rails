@@ -1,0 +1,43 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id         :integer          not null, primary key
+#  content    :string
+#  mail       :string
+#  name       :string
+#  password   :string
+#  title      :string
+#  url        :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  blog_id    :integer
+#
+# Indexes
+#
+#  index_comments_on_blog_id  (blog_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (blog_id => blogs.id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blog: one
+  name: MyString
+  title: MyString
+  mail: MyString
+  url: MyString
+  password: MyString
+  content: MyString
+
+two:
+  blog: two
+  name: MyString
+  title: MyString
+  mail: MyString
+  url: MyString
+  password: MyString
+  content: MyString
