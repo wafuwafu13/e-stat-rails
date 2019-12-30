@@ -7,6 +7,7 @@ $gray-medium-light: #eaeaea;
 
 body {
     padding-top: 60px;
+    background-color: #f8f8f8;
 }
 
 footer {
@@ -57,5 +58,16 @@ footer {
       float: left;
       margin-left: 15px;
     }
+  }
+}
+
+.panel{
+  padding: 60px;
+  .date {
+    color: #BBBBBB;
+  }
+  .title{
+    font-family: 'klee','Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','ヒラギノ明朝 ProN','Hiragino Mincho ProN';
+    margin-bottom: 50px;
   }
 }
