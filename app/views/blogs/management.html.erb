@@ -1,34 +1,37 @@
-<table class="table" style="table-layout:fixed;">
-  <thead>
-    <tr>
-      <th style="width:100px">日付</th>
-      <th style="width:100px">タイトル</th>
-      <th style="width:100px">本文</th>
-      <th style="width:10px">編集</th>
-      <th style="width:5px">削除</th>
-    </tr>
-  </thead>
-  <% @blogs.each do |blog| %>
-  <tbody>
-    <tr>
-      <td><%= blog.created_at.strftime("%Y/%m/%d") %></td>
-      <td><%= link_to "#{blog.title}".truncate(20, omission: '...'), blog %></td>
-      <td><%= blog.content.truncate(20, omission: '...') %></td>
-      <td>
-        <%= link_to edit_blog_path(blog) do %>
-          <i class="fa fa-edit"></i>
-        <% end %>
-      </td>
-      <td>
-        <%= link_to blog, method: :delete, data: { confirm: '本当に削除しますか?' } do %>
-          <i class="fa fa-times-circle"></i>
-        <% end %>
-      </td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-
-
+<%= render 'static_pages/menu' %>
+<div class="container">
+  <div class="row col-md-8">
+    <table class="table" style="table-layout:fixed;">
+      <thead>
+        <tr>
+          <th style="width:60px">日付</th>
+          <th style="width:100px">タイトル</th>
+          <th style="width:140px">本文</th>
+          <th style="width:10px"></th>
+          <th style="width:5px"></th>
+        </tr>
+      </thead>
+      <% @blogs.each do |blog| %>
+      <tbody>
+        <tr>
+          <td><%= blog.created_at.strftime("%Y/%m/%d") %></td>
+          <td><%= link_to "#{blog.title}".truncate(12, omission: '...'), blog %></td>
+          <td><%= blog.content.truncate(22, omission: '...') %></td>
+          <td>
+            <%= link_to edit_blog_path(blog) do %>
+              <i class="fa fa-edit"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to blog, method: :delete, data: { confirm: '本当に削除しますか?' } do %>
+              <i class="fa fa-times-circle"></i>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>
 
 <%= will_paginate @blogs, :previous_label => '&lt 前のページ', :next_label => '次のページ &gt' %>

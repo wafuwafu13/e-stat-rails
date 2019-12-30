@@ -1,5 +1,5 @@
 <% @blogs.each do |blog| %>
-  <div class="panel">
+  <div class="panel blog-panel">
     <div>
       <h5 class="date"><%= blog.created_at.strftime("%Y/%m/%d") %></h5>
       <h2 class="title"><b><%= blog.title if blog.title? %></b></h1>
