@@ -61,7 +61,7 @@ footer {
   }
 }
 
-.panel{
+.blog-panel{
   padding: 60px;
   .date {
     color: #BBBBBB;
@@ -69,5 +69,32 @@ footer {
   .title{
     font-family: 'klee','Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','ヒラギノ明朝 ProN','Hiragino Mincho ProN';
     margin-bottom: 50px;
+  }
+}
+
+.menu-panel{
+  padding-top: 30px;
+  .panel-heading {
+    background-color: #e84c3d;
+  }
+  .fa-home {
+    color: white;
+  }
+  ul {
+    padding: 5px 0 0 10px;
+    list-style: none;
+  }
+}
+
+.main-panel{
+  color: black;
+  margin: 30px;
+  .menu-icon{
+    font-size: 50px;
+    padding-left: 35px;
+  }
+  h5 {
+    padding-top: 10px;
+    padding-left: 25px;
   }
 }

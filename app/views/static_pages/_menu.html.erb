@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 menu-panel">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <i class="fa fa-home"> ホーム</i>
+        </div>
+        <div>
+        <ul>
+          <li><%= link_to "ブログの確認", @blog %></li>
+          <li><%= link_to "新しく記事を書く", new_blog_path %></li>
+          <li><%= link_to "記事の管理", management_blogs_path %></li>
+        </ul>
+        <div>
+      </div>
+    </div>
+  </div>
+</div>
