@@ -1,25 +1,24 @@
 class BlogsController < ApplicationController
-    before_action :logged_in_user, only: [:create, :destroy, :edit]
-    before_action :correct_user, only: :destroy
 
     def index
-      @blogs = current_user.blogs.paginate(page: params[:page], per_page: 5)
-      @user = current_user
+      @blogs = Blog.where(user_id: 1).paginate(page: params[:page], per_page: 5)
+      @user = User.first
     end
 
     def show
       @blog = Blog.find(params[:id])
       @comment = Comment.new(blog_id: @blog.id)
       @comments = @blog.comments
-      @user = current_user
+      @user = User.first
     end
 
     def new
       @blog = Blog.new()
+      @user = User.first
     end
         
     def create
-      @blog = current_user.blogs.build(blog_params)
+      @blog = User.first.blogs.build(blog_params)
       if @blog.save
           flash[:success] = "ブログが作成されました！"
           redirect_to select_blog_path(@blog)
@@ -30,6 +29,8 @@ class BlogsController < ApplicationController
     end
 
     def destroy
+      @blog = Blog.find(params[:id])
+      binding.pry
       @blog.destroy
       flash[:success] = "ブログを削除しました"
       redirect_to request.referrer || root_url
@@ -37,6 +38,7 @@ class BlogsController < ApplicationController
 
     def edit
       @blog = Blog.find(params[:id])
+      @user = User.first
     end
 
     def update
@@ -50,22 +52,19 @@ class BlogsController < ApplicationController
     end
 
     def management
-      @blogs = current_user.blogs.paginate(page: params[:page], per_page: 20)
+      @blogs = Blog.where(user_id: 1).paginate(page: params[:page], per_page: 20)
+      @user = User.first
     end
 
     def select
       @blog = Blog.find(params[:id])
+      @user = User.first
     end
 
     private
       
       def blog_params
         params.require(:blog).permit(:title, :content, :picture)
-      end
-
-      def correct_user
-        @blog = current_user.blogs.find_by(id: params[:id])
-        redirect_to root_url if @blog.nil?
       end
     
 end
