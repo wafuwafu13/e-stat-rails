@@ -1,3 +1,21 @@
-<%= link_to "記事を確認", @blog %>
-<%= link_to "過去記事一覧へ", management_blogs_path %>
-<%= link_to "再編集する", edit_blog_path(@blog) %>
+<%= render 'static_pages/menu' %>
+<div class="container">
+  <%= link_to(@blog, class: "panel main-panel col-md-2") do %>
+    <div class="panel-body">
+      <i class="fa fa-eye menu-icon"></i>
+      <h5>記事を確認</h5>
+    </div>
+  <% end %>
+  <%= link_to(management_blogs_path, class: "panel main-panel col-md-2") do %>
+    <div class="panel-body">
+      <i class="fa fa-archive menu-icon"></i>
+      <h5>過去記事一覧へ</h5>
+    </div>
+  <% end %>
+  <%= link_to(edit_blog_path(@blog), class: "panel main-panel col-md-2") do %>
+    <div class="panel-body">
+      <i class="fa fa-edit menu-icon"></i>
+      <h5>再編集する</h5>
+    </div>
+  <% end %>
+</div>
