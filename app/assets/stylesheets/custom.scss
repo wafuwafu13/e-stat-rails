@@ -117,3 +117,12 @@ footer {
     bottom: 10px;
   }
 }
+
+.login-home {
+  position: relative;
+  .login-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
