@@ -9,5 +9,5 @@
 User.create!(name: "hoge",
         email: "mariobaske@i.softbank.jp",
         password: "mariobaske13",
-        password_confirmation: "mariobakse13",
+        password_confirmation: "mariobaske13"
         )
