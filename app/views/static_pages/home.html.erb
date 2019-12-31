@@ -1,7 +1,26 @@
-<% if logged_in? %>
-  <%= render 'static_pages/login_home' %>
-<% else %>
-  <%= render 'static_pages/logout_home' %>
-<% end %>
-  
+<div class="container">
+  <div class="col-md-2">
+    <%= render 'menu' %>
+  </div>
+  <div class="col-md-9">
+    <%= link_to(new_blog_path, class: "panel main-panel col-md-3") do %>
+    <div class="panel-body">
+      <i class="fa fa-file-text-o menu-icon"></i>
+      <h5>記事を書く</h5>
+    </div>
+  <% end %>
+  <%= link_to(management_blogs_path, class: "panel main-panel col-md-3") do %>
+    <div class="panel-body">
+      <i class="fa fa-archive menu-icon"></i>
+      <h5>記事の管理</h5>
+    </div>
+  <% end %>
+  <%= link_to(edit_user_path(current_user), class: "panel main-panel col-md-3") do %>
+    <div class="panel-body">
+      <i class="fa fa-drivers-license menu-icon"></i>
+      <h5>プロフィール</h5>
+    </div>
+  <% end %>
+  </div>
+</div>
 

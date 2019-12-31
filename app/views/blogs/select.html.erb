@@ -1,21 +1,25 @@
-<%= render 'static_pages/menu' %>
 <div class="container">
-  <%= link_to(@blog, class: "panel main-panel col-md-2", :target => ["_blank"]) do %>
+  <div class="col-md-2">
+  <%= render 'static_pages/menu' %>
+  </div>
+  <div class="col-md-9">
+  <%= link_to(@blog, class: "panel main-panel col-md-3", :target => ["_blank"]) do %>
     <div class="panel-body">
       <i class="fa fa-eye menu-icon"></i>
       <h5>記事を確認</h5>
     </div>
   <% end %>
-  <%= link_to(management_blogs_path, class: "panel main-panel col-md-2") do %>
+  <%= link_to(management_blogs_path, class: "panel main-panel col-md-3") do %>
     <div class="panel-body">
       <i class="fa fa-archive menu-icon"></i>
       <h5>過去記事一覧へ</h5>
     </div>
   <% end %>
-  <%= link_to(edit_blog_path(@blog), class: "panel main-panel col-md-2") do %>
+  <%= link_to(edit_blog_path(@blog), class: "panel main-panel col-md-3") do %>
     <div class="panel-body">
       <i class="fa fa-edit menu-icon"></i>
       <h5>再編集する</h5>
     </div>
   <% end %>
+  </div>
 </div>

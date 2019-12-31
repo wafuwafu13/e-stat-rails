@@ -74,6 +74,7 @@ footer {
 }
 
 .menu-panel{
+  width: 170px;
   padding-top: 30px;
   .panel-heading {
     background-color: #e84c3d;
@@ -92,7 +93,7 @@ footer {
   margin: 30px;
   .menu-icon{
     font-size: 50px;
-    padding-left: 35px;
+    padding-left: 45px;
   }
   h5 {
     padding-top: 10px;
@@ -102,6 +103,7 @@ footer {
 
 .profile {
   padding-top: 50px;
+  margin-left: 50px;
   position: relative;
   .profile-button {
     position: absolute;
@@ -125,5 +127,19 @@ footer {
     position: absolute;
     right: 0;
     bottom: 0;
+  }
+}
+
+.management {
+  padding-top: 60px;
+  margin-left: 50px;
+}
+
+.sidebar {
+  ul {
+    list-style: none;
+    li {
+      padding-bottom: 5px;
+    }
   }
 }
