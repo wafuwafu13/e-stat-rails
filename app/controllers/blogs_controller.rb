@@ -4,12 +4,14 @@ class BlogsController < ApplicationController
 
     def index
       @blogs = current_user.blogs.paginate(page: params[:page], per_page: 5)
+      @user = current_user
     end
 
     def show
       @blog = Blog.find(params[:id])
       @comment = Comment.new(blog_id: @blog.id)
       @comments = @blog.comments
+      @user = current_user
     end
 
     def new
