@@ -11,6 +11,7 @@ class BlogsController < ApplicationController
       @blog = Blog.find(params[:id])
       @comment = Comment.new(blog_id: @blog.id)
       @comments = @blog.comments
+      @user = current_user
     end
 
     def new
