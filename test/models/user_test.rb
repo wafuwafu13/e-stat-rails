@@ -3,16 +3,12 @@
 # Table name: users
 #
 #  id                :integer          not null, primary key
-#  activated         :boolean          default(FALSE)
-#  activated_at      :datetime
 #  activation_digest :string
-#  admin             :boolean          default(FALSE)
 #  email             :string
 #  image             :string
 #  introduction      :string
 #  name              :string
 #  password_digest   :string
-#  remember_digest   :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
