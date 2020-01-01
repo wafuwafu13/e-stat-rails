@@ -30,7 +30,6 @@ class BlogsController < ApplicationController
 
     def destroy
       @blog = Blog.find(params[:id])
-      binding.pry
       @blog.destroy
       flash[:success] = "ブログを削除しました"
       redirect_to request.referrer || root_url
