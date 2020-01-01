@@ -41,14 +41,6 @@ class User < ApplicationRecord
         self.email = email.downcase
     end
 
-    def send_activation_email
-        UserMailer.account_activation(self).deliver_now
-    end
-
-    def feed
-        Blog.where("user_id=?", id)
-    end
-
     private
       
     def picture_size
