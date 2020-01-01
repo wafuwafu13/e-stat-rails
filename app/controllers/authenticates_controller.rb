@@ -7,9 +7,8 @@ class AuthenticatesController < ApplicationController
     end
 
     def create
-      if params[:pass] == "mariobaske13"
-        flash[:success] = "パスワードあってる"
-        redirect_to request.referrer || root_url
+      if params[:password] == "mariobaske13"
+        redirect_to edit_blog_path(@blog)
       else
         flash[:danger] = "パスワード違う"
         redirect_to request.referrer || root_url

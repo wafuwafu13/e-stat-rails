@@ -38,6 +38,7 @@ class BlogsController < ApplicationController
     def edit
       @blog = Blog.find(params[:id])
       @user = User.first
+      redirect_to controller: 'authenticates', action: 'new'
     end
 
     def update
