@@ -6,13 +6,13 @@
 #  image        :string
 #  introduction :string
 #  name         :string
+#  password     :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 
 class User < ApplicationRecord
     has_many :blogs, dependent: :destroy
-    before_save :downcase_email
     mount_uploader :image, PictureUploader
     validates :name, presence: true, length: { maximum: 50 }
     validates :introduction, length: { maximum: 200 }

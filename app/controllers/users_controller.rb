@@ -14,9 +14,24 @@ class UsersController < ApplicationController
     end
   end
 
+  # def authenticate
+  #   @user = User.first
+  # end
+
+  # def jadge
+  #   @user = User.first
+  #   if @user.password == mariobaske13
+  #     flash[:success] = "パスワードあってる"
+  #     redirect_to request.referrer || root_url
+  #   else
+  #     flash[:danger] = "パスワード違う"
+  #     redirect_to request.referrer || root_url
+  #   end
+  # end
+
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :image, :introduction, :password, :password_confirmation)
+      params.require(:user).permit(:name, :image, :introduction, :password)
     end
 end
