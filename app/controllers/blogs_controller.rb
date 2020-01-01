@@ -30,7 +30,6 @@ class BlogsController < ApplicationController
 
     def destroy
       @blog = Blog.find(params[:id])
-      binding.pry
       @blog.destroy
       flash[:success] = "ブログを削除しました"
       redirect_to request.referrer || root_url
@@ -39,6 +38,7 @@ class BlogsController < ApplicationController
     def edit
       @blog = Blog.find(params[:id])
       @user = User.first
+      redirect_to controller: 'authenticates', action: 'new'
     end
 
     def update
