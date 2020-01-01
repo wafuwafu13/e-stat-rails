@@ -1,7 +1,0 @@
-<h1>文系学生と学ぶ社会学</h1>
-
-<p>こんにちは、<%= @user.name %>さん</p>
-
-<p>文系学生と学ぶ社会学へようこそ!アカウントを有効にするには下のリンクをクリックしてください。</p>
-
-<%= link_to "アカウント有効化", edit_account_activation_url(@user.activation_token, email: @user.email) %>
