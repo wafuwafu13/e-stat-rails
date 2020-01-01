@@ -1,0 +1,5 @@
+<%= form_for(:session, url: login_path, html: { class: "login-form" }) do |f| %>
+  <%= f.label :"パスワード" %>
+  <%= f.password_field :password, class: "form-control" %>
+  <%= f.submit "ログイン", class: "btn btn-primary login-button" %>
+<% end %>

@@ -144,3 +144,14 @@ footer {
     }
   }
 }
+
+.login-form{
+  height: 250px;
+  padding-top: 60px;
+  position: relative;
+  .login-button {
+    position: absolute;
+    top: 150px;
+    right: 0;
+  }
+}

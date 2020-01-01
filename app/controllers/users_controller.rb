@@ -2,6 +2,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.first
+    if logged_in?
+      render 'edit'
+    else
+      flash[:danger] = "ログインが必要です"
+      redirect_to login_path
+    end
   end
 
   def update
