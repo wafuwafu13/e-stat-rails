@@ -23,22 +23,32 @@ class BlogsController < ApplicationController
           flash[:success] = "ブログが作成されました！"
           redirect_to select_blog_path(@blog)
       else
+          flash[:danger] = "タイトルまたは本文が空です"
           redirect_to new_blog_path
-          flash[:danger] = "タイトルまたは本文が空です。"
       end
     end
 
     def destroy
       @blog = Blog.find(params[:id])
-      binding.pry
-      @blog.destroy
-      flash[:success] = "ブログを削除しました"
-      redirect_to request.referrer || root_url
+      if logged_in?
+        @blog.destroy
+        flash[:success] = "ブログを削除しました"
+        redirect_to request.referrer || root_url
+      else
+        flash[:danger] = "ログインが必要です"
+        redirect_to login_path
+      end
     end
 
     def edit
       @blog = Blog.find(params[:id])
       @user = User.first
+      if logged_in?
+        render 'edit'
+      else
+        flash[:danger] = "ログインが必要です"
+        redirect_to login_path
+      end
     end
 
     def update
@@ -47,6 +57,7 @@ class BlogsController < ApplicationController
         flash[:success] = "ブログを編集しました"
         redirect_to select_blog_path(@blog)
       else
+        flash[:danger] = "タイトルまたは本文が空です"
         render 'edit'
       end
     end
