@@ -6,9 +6,14 @@
 　　     <%= link_to(blog) do %>
 　　     <h2 class="title"><b><%= blog.title if blog.title? %></b></h1>
 　　     <% end %>
+        <div class="blog-tag">
+        <% blog.tags.each do |tag| %>
+          <span class="badge badge-primary"><%= tag.name %></span>
+        <% end %>
+        </div>
 　　     <%= image_tag blog.picture.url if blog.picture? %>
 　　     <h4><%= blog.content %></h4>
-　　     </div>
+　　   </div>
 　　  <% end %>
 　　</div>
 　　<div class="col-md-3">

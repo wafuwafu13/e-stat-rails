@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200101004025) do
+ActiveRecord::Schema.define(version: 20200101234116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blog_tag_relations", force: :cascade do |t|
+    t.integer  "blog_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_id"], name: "index_blog_tag_relations_on_blog_id", using: :btree
+    t.index ["tag_id"], name: "index_blog_tag_relations_on_tag_id", using: :btree
+  end
 
   create_table "blogs", force: :cascade do |t|
     t.text     "content"
@@ -49,6 +58,12 @@ ActiveRecord::Schema.define(version: 20200101004025) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -61,6 +76,8 @@ ActiveRecord::Schema.define(version: 20200101004025) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "blog_tag_relations", "blogs"
+  add_foreign_key "blog_tag_relations", "tags"
   add_foreign_key "blogs", "users"
   add_foreign_key "comments", "blogs"
 end

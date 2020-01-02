@@ -3,6 +3,16 @@
   <%= render 'static_pages/menu' %>
   </div>
   <div class="row col-md-8 management">
+    <%= form_tag management_blogs_path, method: :get, class: "blog-seachForm" do %>
+      <%= select_tag :tag_id,
+                     options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+                     {
+                       prompt: "カテゴリ",
+                       class: "form-control blog-select",
+                       onchange: "submit(this.form);"
+                     }
+      %>         
+    <% end %>
     <table class="table" style="table-layout:fixed;">
       <thead>
         <tr>

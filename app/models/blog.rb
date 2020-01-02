@@ -23,6 +23,8 @@
 class Blog < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :blog_tag_relations, dependent: :delete_all
+  has_many :tags, through: :blog_tag_relations, dependent: :delete_all
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true

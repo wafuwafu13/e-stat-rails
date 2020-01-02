@@ -10,3 +10,12 @@ User.create!(name: "hoge",
         password: "mariobaske13",
         password_confirmation: "mariobaske13"
         )
+
+Tag.create([
+        { name: '男女' },
+        { name: '年収' },
+        { name: '身長' },
+        { name: '体重' },
+        { name: '国勢調査' },
+        { name: '平均' },
+])
