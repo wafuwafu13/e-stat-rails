@@ -1,5 +1,10 @@
 <img width="1434" alt="スクリーンショット 2020-01-02 11 08 24" src="https://user-images.githubusercontent.com/50798936/71649294-ba08e480-2d50-11ea-81a6-ceac8be5925e.png">
 
+## :globe_with_meridians:  App URL
+
+### [文系学生と学ぶ社会学(web)](https://stormy-woodland-48686.herokuapp.com/)  
+### [文系学生と学ぶ社会学(ios)](https://apps.apple.com/jp/app/%E6%97%A5%E6%9C%AC%E7%B5%B1%E8%A8%88-%E6%96%87%E7%B3%BB%E5%AD%A6%E7%94%9F%E3%81%A8%E5%AD%A6%E3%81%B6%E7%A4%BE%E4%BC%9A%E7%B5%B1%E8%A8%88%E5%AD%A6/id1491159876)
+
 ## :house:  開発環境
   
 - Ruby
@@ -66,4 +71,10 @@ jQueryで画像のプレビュー機能を実装しました。
 
 <img width="1425" alt="スクリーンショット 2020-01-02 14 19 37" src="https://user-images.githubusercontent.com/50798936/71652742-f21d2100-2d6a-11ea-8a9f-1648a7fb1242.png">
 
+## :eyes:  Author
 
+[Ruby on Rails チュートリアル](https://railstutorial.jp/)完了後、アレンジを加えてfc2ブログとほとんど同じ動きをするブログに改良。  
+  
+- [twitter](https://twitter.com/wafuwafu13_)
+- [Qiita](https://qiita.com/wafuwafu13)
+- [競ぷろぐ](https://kyoupurog.hatenablog.com/)
