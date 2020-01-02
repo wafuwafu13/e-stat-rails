@@ -5,9 +5,8 @@
 ### [文系学生と学ぶ社会学(web)](https://stormy-woodland-48686.herokuapp.com/)  
 ### [文系学生と学ぶ社会学(ios)](https://apps.apple.com/jp/app/%E6%97%A5%E6%9C%AC%E7%B5%B1%E8%A8%88-%E6%96%87%E7%B3%BB%E5%AD%A6%E7%94%9F%E3%81%A8%E5%AD%A6%E3%81%B6%E7%A4%BE%E4%BC%9A%E7%B5%B1%E8%A8%88%E5%AD%A6/id1491159876)
 
-## :house:  開発環境
+## :house:  Development environment
   
-- Ruby
 - RubyonRails
 - Bootstrap
 - jQuery
@@ -15,7 +14,7 @@
 - Heroku
 - Amazon S3
 
-## :notebook:  アプリ機能
+## :notebook:  Usage
 
 ### 1.記事の作成
 
