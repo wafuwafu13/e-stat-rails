@@ -1,24 +1,14 @@
-# README
+<img width="1434" alt="スクリーンショット 2020-01-02 11 08 24" src="https://user-images.githubusercontent.com/50798936/71649294-ba08e480-2d50-11ea-81a6-ceac8be5925e.png">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## :house:  開発環境
+  
+- Ruby
+- RubyonRails
+- Bootstrap
+- jQuery
+- VsCode
 
-Things you may want to cover:
+## :notebook:  アプリ機能
 
-* Ruby version
+### 1、記事の作成
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
