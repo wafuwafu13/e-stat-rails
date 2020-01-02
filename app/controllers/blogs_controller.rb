@@ -63,7 +63,8 @@ class BlogsController < ApplicationController
     end
 
     def management
-      @blogs = Blog.where(user_id: 1).paginate(page: params[:page], per_page: 20)
+      @blogs = params[:tag_id].present? ? Tag.find(params[:tag_id]).blogs : Blog.all
+      @blogs = @blogs.paginate(page: params[:page], per_page: 20)
       @user = User.first
     end
 
@@ -75,7 +76,7 @@ class BlogsController < ApplicationController
     private
       
       def blog_params
-        params.require(:blog).permit(:title, :content, :picture)
+        params.require(:blog).permit(:title, :content, :picture, tag_ids: [])
       end
     
 end
