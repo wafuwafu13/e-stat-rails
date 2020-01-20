@@ -3,7 +3,7 @@
       <h4><b>プロフィール</b></h4>
       <ul>
         <li><%= @user.name %></li>
-        <li><%= image_tag @user.image %></li>
+        <li><%= image_tag @user.image.url unless @user.image.nil? %>
         <li><%= @user.introduction %></li>
       </ul>
     </div>
