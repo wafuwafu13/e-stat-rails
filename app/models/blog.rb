@@ -31,6 +31,7 @@ class Blog < ApplicationRecord
   validates :content, presence: true, length: { maximum: 3000 }
   validates :title, presence: true, length: { maximum: 40 }
   validate :picture_size
+  has_rich_text :content
 
 private
   
