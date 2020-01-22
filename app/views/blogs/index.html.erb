@@ -11,11 +11,11 @@
           <span class="badge badge-primary"><%= tag.name %></span>
         <% end %>
         </div>
-　　     <%= image_tag blog.picture.url if blog.picture? %>
-　　     <h4><%= blog.content %></h4>
-　　   </div>
-　　  <% end %>
-　　</div>
+        <%= image_tag blog.picture.url if blog.picture? %>
+        <h4><%= markdown(blog.content).html_safe if blog.content? %></h4>
+        </div>
+      <% end %>
+   </div>
 　　<div class="col-md-3">
 　　<%= render 'users/sidebar' %>
 　　</div>

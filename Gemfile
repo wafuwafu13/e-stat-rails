@@ -41,9 +41,9 @@ gem 'coffee-rails'
 # SQL
 gem 'hirb' 
 gem 'hirb-unicode'
-# Actiontext
-gem "actiontext"
-gem 'webpacker', github: 'rails/webpacker'
+# Markdown
+gem 'redcarpet'
+gem 'coderay'
 #gem 'image_processing'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
