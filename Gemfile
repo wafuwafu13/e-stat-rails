@@ -41,6 +41,10 @@ gem 'coffee-rails'
 # SQL
 gem 'hirb' 
 gem 'hirb-unicode'
+# Markdown
+gem 'redcarpet'
+gem 'coderay'
+#gem 'image_processing'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

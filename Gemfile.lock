@@ -398,6 +398,7 @@ GEM
       json (>= 1.8)
       nokogiri (~> 1.5)
       optimist (~> 3.0)
+    redcarpet (3.5.0)
     representable (3.0.4)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
@@ -474,6 +475,7 @@ DEPENDENCIES
   bootstrap-will_paginate
   byebug
   carrierwave
+  coderay
   coffee-rails
   dotenv-rails
   faker
@@ -492,6 +494,7 @@ DEPENDENCIES
   puma
   rails (= 6.0.2)
   rails_12factor
+  redcarpet
   sass-rails
   spring
   spring-watcher-listen

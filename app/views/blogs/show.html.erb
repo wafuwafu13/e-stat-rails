@@ -10,7 +10,7 @@
         <% end %>
         </div>
         <%= image_tag @blog.picture.url if @blog.picture? %>
-        <h4><%= @blog.content %></h4>
+        <h5><%= markdown(@blog.content).html_safe %></h5>
       </div>
     </div>
     <div class="comments">
