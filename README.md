@@ -1,4 +1,4 @@
-<img width="1434" alt="スクリーンショット 2020-01-02 11 08 24" src="https://user-images.githubusercontent.com/50798936/71649294-ba08e480-2d50-11ea-81a6-ceac8be5925e.png">
+<img width="1440" alt="スクリーンショット 2020-01-23 10 46 56" src="https://user-images.githubusercontent.com/50798936/72950130-c4595400-3dcd-11ea-8d17-08673cf392ee.png">
 
 ## :globe_with_meridians:  App URL
 
